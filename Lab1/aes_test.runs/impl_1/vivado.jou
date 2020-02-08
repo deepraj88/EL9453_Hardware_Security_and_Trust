@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Fri Feb  7 20:17:25 2020
+# Process ID: 23627
+# Current directory: /media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/impl_1
+# Command line: vivado -log apatb_Cipher_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source apatb_Cipher_top.tcl -notrace
+# Log file: /media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/impl_1/apatb_Cipher_top.vdi
+# Journal file: /media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source apatb_Cipher_top.tcl -notrace

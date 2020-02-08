@@ -1,0 +1,803 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Fri Feb  7 20:11:52 2020
+# Process ID: 19787
+# Current directory: /media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/synth_1
+# Command line: vivado -log apatb_Cipher_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source apatb_Cipher_top.tcl
+# Log file: /media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/synth_1/apatb_Cipher_top.vds
+# Journal file: /media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source apatb_Cipher_top.tcl -notrace
+WARNING: [Project 1-153] The current project part 'xc7a100tcsg324-2' does not match with the 'XILINX.COM:AC701:PART0:1.3' board part settings. The project part will be reset to 'XILINX.COM:AC701:PART0:1.3' board part.
+INFO: [Project 1-152] Project part set to artix7 (xc7a200tfbg676-2)
+Command: synth_design -top apatb_Cipher_top -part xc7a100tcsg324-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 19792 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1303.441 ; gain = 80.996 ; free physical = 3090 ; free virtual = 13948
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'apatb_Cipher_top' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/tiny-AES-c/Cipher.autotb.v:16]
+	Parameter INPUT_SIZE bound to: 16 - type: integer 
+	Parameter KEY_SIZE bound to: 176 - type: integer 
+	Parameter MEM2_SIZE bound to: 16 - type: integer 
+	Parameter MEM0_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter MEM0_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter MEM0_DEPTH bound to: 16 - type: integer 
+	Parameter MEM1_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter MEM1_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter MEM1_DEPTH bound to: 176 - type: integer 
+	Parameter MEM2_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter MEM2_ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter MEM2_DEPTH bound to: 2 - type: integer 
+	Parameter DLY bound to: 0.100000 - type: float 
+INFO: [Synth 8-638] synthesizing module 'control_unit' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/new/control_unit.v:34]
+	Parameter INPUT_SIZE bound to: 16 - type: integer 
+	Parameter KEY_SIZE bound to: 176 - type: integer 
+	Parameter MEM2_SIZE bound to: 16 - type: integer 
+	Parameter MEM0_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter MEM0_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter MEM0_DEPTH bound to: 16 - type: integer 
+	Parameter MEM1_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter MEM1_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter MEM1_DEPTH bound to: 176 - type: integer 
+	Parameter MEM2_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter MEM2_ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter MEM2_DEPTH bound to: 2 - type: integer 
+	Parameter DLY bound to: 0.100000 - type: float 
+	Parameter SIZE bound to: 4 - type: integer 
+	Parameter IDLE bound to: 4'b0000 
+	Parameter INVALID bound to: 4'b0001 
+	Parameter ENTER_KEY bound to: 4'b0010 
+	Parameter ENTER_IP bound to: 4'b0011 
+	Parameter ENABLE bound to: 4'b0101 
+	Parameter VIEW_KEY bound to: 4'b0110 
+	Parameter VIEW_IP bound to: 4'b0111 
+INFO: [Synth 8-638] synthesizing module 'AESL_automem_state' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_state.v:10]
+	Parameter TV_IN bound to: ../tv/cdatafile/c.Cipher.autotvin_state.dat - type: string 
+	Parameter TV_OUT bound to: ../tv/rtldatafile/rtl.Cipher.autotvout_state.dat - type: string 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+	Parameter DLY bound to: 0.100000 - type: float 
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_state.v:164]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_state.v:177]
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM "mem_reg" dissolved into registers
+INFO: [Synth 8-256] done synthesizing module 'AESL_automem_state' (1#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_state.v:10]
+WARNING: [Synth 8-689] width (32) of port connection 'ce1' does not match port width (1) of module 'AESL_automem_state' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/new/control_unit.v:578]
+INFO: [Synth 8-638] synthesizing module 'AESL_automem_RoundKey' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_RoundKey.v:11]
+	Parameter TV_IN bound to: ../tv/cdatafile/c.Cipher.autotvin_RoundKey.dat - type: string 
+	Parameter TV_OUT bound to: ../tv/rtldatafile/rtl.Cipher.autotvout_RoundKey.dat - type: string 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 176 - type: integer 
+	Parameter DLY bound to: 0.100000 - type: float 
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_RoundKey.v:373]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_RoundKey.v:386]
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM "mem_reg" dissolved into registers
+INFO: [Synth 8-256] done synthesizing module 'AESL_automem_RoundKey' (2#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_RoundKey.v:11]
+WARNING: [Synth 8-689] width (32) of port connection 'ce1' does not match port width (1) of module 'AESL_automem_RoundKey' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/new/control_unit.v:599]
+INFO: [Synth 8-638] synthesizing module 'AESL_automem_state__parameterized0' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_state.v:10]
+	Parameter TV_IN bound to: ../tv/cdatafile/c.Cipher.autotvin_state.dat - type: string 
+	Parameter TV_OUT bound to: ../tv/rtldatafile/rtl.Cipher.autotvout_state.dat - type: string 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 2 - type: integer 
+	Parameter DLY bound to: 0.100000 - type: float 
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_state.v:164]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_state.v:177]
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM "mem_reg" dissolved into registers
+INFO: [Synth 8-256] done synthesizing module 'AESL_automem_state__parameterized0' (2#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/verilog/AESL_automem_state.v:10]
+WARNING: [Synth 8-6014] Unused sequential element uart_rx_d_reg[0] was removed.  [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/new/control_unit.v:236]
+WARNING: [Synth 8-6014] Unused sequential element sw0_d_reg was removed.  [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/new/control_unit.v:519]
+INFO: [Synth 8-256] done synthesizing module 'control_unit' (3#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/new/control_unit.v:34]
+INFO: [Synth 8-638] synthesizing module 'Cipher_0' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/synth_1/.Xil/Vivado-19787-deepraj-Aurora-R4/realtime/Cipher_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'Cipher_0' (4#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/synth_1/.Xil/Vivado-19787-deepraj-Aurora-R4/realtime/Cipher_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'SevenSeg_Top' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:15]
+INFO: [Synth 8-3491] module 'Hex2LED' declared at '/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:6' bound to instance 'CONV1' of component 'Hex2LED' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:83]
+INFO: [Synth 8-638] synthesizing module 'Hex2LED' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:13]
+INFO: [Synth 8-226] default block is never used [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:37]
+WARNING: [Synth 8-614] signal 'alphabet' is read in the process but is not in the sensitivity list [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:15]
+WARNING: [Synth 8-614] signal 'X' is read in the process but is not in the sensitivity list [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'Hex2LED' (5#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:13]
+INFO: [Synth 8-3491] module 'Hex2LED' declared at '/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:6' bound to instance 'CONV2' of component 'Hex2LED' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:84]
+INFO: [Synth 8-3491] module 'Hex2LED' declared at '/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:6' bound to instance 'CONV3' of component 'Hex2LED' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:85]
+INFO: [Synth 8-3491] module 'Hex2LED' declared at '/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:6' bound to instance 'CONV4' of component 'Hex2LED' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:86]
+INFO: [Synth 8-3491] module 'Hex2LED' declared at '/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:6' bound to instance 'CONV5' of component 'Hex2LED' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:87]
+INFO: [Synth 8-3491] module 'Hex2LED' declared at '/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:6' bound to instance 'CONV6' of component 'Hex2LED' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:88]
+INFO: [Synth 8-3491] module 'Hex2LED' declared at '/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:6' bound to instance 'CONV7' of component 'Hex2LED' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:89]
+INFO: [Synth 8-3491] module 'Hex2LED' declared at '/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/Hex2SevenSegConverter.vhd:6' bound to instance 'CONV8' of component 'Hex2LED' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'SevenSeg_Top' (6#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'uart_wrapper' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/new/uart_wrapper.v:23]
+	Parameter CLK_FREQ bound to: 100000000 - type: integer 
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+	Parameter PARITY_BIT bound to: none - type: string 
+	Parameter NO_BYTE_SEND bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter START_TASK bound to: 2'b01 
+	Parameter TASK_PROGRESS bound to: 2'b10 
+	Parameter TASK_END bound to: 2'b11 
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/new/uart_wrapper.v:31]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/new/uart_wrapper.v:32]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/new/uart_wrapper.v:49]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/new/uart_wrapper.v:50]
+INFO: [Synth 8-226] default block is never used [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/new/uart_wrapper.v:73]
+INFO: [Synth 8-638] synthesizing module 'UART' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/imports/uart.vhd:42]
+	Parameter CLK_FREQ bound to: 100000000 - type: integer 
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+	Parameter PARITY_BIT bound to: none - type: string 
+	Parameter USE_DEBOUNCER bound to: 1 - type: bool 
+INFO: [Synth 8-638] synthesizing module 'UART_TX' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/imports/uart_tx.vhd:31]
+	Parameter PARITY_BIT bound to: none - type: string 
+INFO: [Synth 8-256] done synthesizing module 'UART_TX' (7#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/imports/uart_tx.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'UART_RX' [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/imports/uart_rx.vhd:31]
+	Parameter PARITY_BIT bound to: none - type: string 
+INFO: [Synth 8-256] done synthesizing module 'UART_RX' (8#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/imports/uart_rx.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'UART' (9#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/imports/uart.vhd:42]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_uart'. This will prevent further optimization [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/new/uart_wrapper.v:116]
+INFO: [Synth 8-256] done synthesizing module 'uart_wrapper' (10#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/sources_1/new/uart_wrapper.v:23]
+INFO: [Synth 8-256] done synthesizing module 'apatb_Cipher_top' (11#1) [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/tiny-AES-c/Cipher.autotb.v:16]
+WARNING: [Synth 8-3917] design apatb_Cipher_top has port UART_CTS driven by constant 0
+WARNING: [Synth 8-3331] design Hex2LED has unconnected port CLK
+WARNING: [Synth 8-3331] design AESL_automem_state__parameterized0 has unconnected port ready
+WARNING: [Synth 8-3331] design AESL_automem_state__parameterized0 has unconnected port done
+WARNING: [Synth 8-3331] design AESL_automem_RoundKey has unconnected port ready
+WARNING: [Synth 8-3331] design AESL_automem_RoundKey has unconnected port done
+WARNING: [Synth 8-3331] design AESL_automem_state has unconnected port ready
+WARNING: [Synth 8-3331] design AESL_automem_state has unconnected port done
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[15]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[14]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[13]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[12]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[11]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[10]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[9]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[8]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[7]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[6]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[5]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[8]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[7]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[6]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[5]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[4]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[3]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[2]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[0]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_AP_DONE
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_AP_IDLE
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_AP_READY
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port UART_RTS
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1355.973 ; gain = 133.527 ; free physical = 3082 ; free virtual = 13945
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1355.973 ; gain = 133.527 ; free physical = 3083 ; free virtual = 13949
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/synth_1/.Xil/Vivado-19787-deepraj-Aurora-R4/dcp3/Cipher_0_in_context.xdc] for cell 'AESL_inst_Cipher'
+Finished Parsing XDC File [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/synth_1/.Xil/Vivado-19787-deepraj-Aurora-R4/dcp3/Cipher_0_in_context.xdc] for cell 'AESL_inst_Cipher'
+Parsing XDC File [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/constrs_1/imports/temp2/nexsys4_ddr.xdc]
+Finished Parsing XDC File [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/constrs_1/imports/temp2/nexsys4_ddr.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/constrs_1/imports/temp2/nexsys4_ddr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/apatb_Cipher_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/apatb_Cipher_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1735.574 ; gain = 0.000 ; free physical = 2811 ; free virtual = 13677
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1735.574 ; gain = 513.129 ; free physical = 2898 ; free virtual = 13769
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1735.574 ; gain = 513.129 ; free physical = 2898 ; free virtual = 13769
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for AESL_inst_Cipher. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1735.574 ; gain = 513.129 ; free physical = 2898 ; free virtual = 13769
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element tx_counter_reg was removed.  [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/new/control_unit.v:247]
+WARNING: [Synth 8-6014] Unused sequential element uart_counter_d_reg was removed.  [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/new/control_unit.v:556]
+WARNING: [Synth 8-6014] Unused sequential element i_cnt_reg was removed.  [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:33]
+WARNING: [Synth 8-6014] Unused sequential element Val_reg was removed.  [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:46]
+INFO: [Synth 8-802] inferred FSM for state register 'tx_pstate_reg' in module 'UART_TX'
+INFO: [Synth 8-5544] ROM "tx_data_out_sel" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_bit_count_en" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_clk_divider_en" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_busy" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_nstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_nstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_nstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_nstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_nstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'rx_pstate_reg' in module 'UART_RX'
+INFO: [Synth 8-5544] ROM "rx_output_reg_en" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rx_receiving_data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rx_clk_divider_en" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rx_nstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rx_nstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rx_nstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rx_nstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "uart_clk_en" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              000 |                              000
+                  txsync |                              001 |                              001
+                startbit |                              010 |                              010
+                databits |                              011 |                              011
+                 stopbit |                              100 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_pstate_reg' using encoding 'sequential' in module 'UART_TX'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                              000
+                startbit |                               01 |                              001
+                databits |                               10 |                              010
+                 stopbit |                               11 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rx_pstate_reg' using encoding 'sequential' in module 'UART_RX'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1735.574 ; gain = 513.129 ; free physical = 2883 ; free virtual = 13753
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 200   
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input   1408 Bit        Muxes := 1     
+	   2 Input    128 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 11    
+	   8 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 76    
+	  32 Input      8 Bit        Muxes := 8     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 10    
+	   3 Input      3 Bit        Muxes := 4     
+	   9 Input      3 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   5 Input      2 Bit        Muxes := 5     
+	   9 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 22    
+	   5 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module AESL_automem_state 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 18    
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 35    
+	   2 Input      1 Bit        Muxes := 2     
+Module AESL_automem_RoundKey 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 178   
++---Muxes : 
+	   2 Input   1408 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 19    
+	   2 Input      1 Bit        Muxes := 2     
+Module AESL_automem_state__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 2     
+Module control_unit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   8 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 22    
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 8     
+	   3 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 13    
+Module Hex2LED 
+Detailed RTL Component Info : 
++---Muxes : 
+	  32 Input      8 Bit        Muxes := 1     
+Module SevenSeg_Top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+	   9 Input      3 Bit        Muxes := 1     
+Module UART_TX 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 1     
+Module UART_RX 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   9 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+Module UART 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module uart_wrapper 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
++---Muxes : 
+	   3 Input      3 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element uart_counter_d_reg was removed.  [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/new/control_unit.v:556]
+WARNING: [Synth 8-6014] Unused sequential element tx_counter_reg was removed.  [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/new/control_unit.v:247]
+WARNING: [Synth 8-6014] Unused sequential element u_SevenSeg_Top/i_cnt_reg was removed.  [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:33]
+WARNING: [Synth 8-6014] Unused sequential element u_SevenSeg_Top/Val_reg was removed.  [/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.srcs/sources_1/imports/7segNexys/SevenSeg_Top.vhd:46]
+WARNING: [Synth 8-3917] design apatb_Cipher_top has port UART_CTS driven by constant 0
+WARNING: [Synth 8-3331] design AESL_automem_state__parameterized0 has unconnected port ready
+WARNING: [Synth 8-3331] design AESL_automem_state__parameterized0 has unconnected port done
+WARNING: [Synth 8-3331] design AESL_automem_RoundKey has unconnected port ready
+WARNING: [Synth 8-3331] design AESL_automem_RoundKey has unconnected port done
+WARNING: [Synth 8-3331] design AESL_automem_state has unconnected port ready
+WARNING: [Synth 8-3331] design AESL_automem_state has unconnected port done
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[15]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[14]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[13]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[12]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[11]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[10]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[9]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[8]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[7]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[6]
+WARNING: [Synth 8-3331] design control_unit has unconnected port O_LED[5]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[8]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[7]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[6]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[5]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[4]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[3]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[2]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_SW[0]
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_AP_DONE
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_AP_IDLE
+WARNING: [Synth 8-3331] design control_unit has unconnected port I_AP_READY
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[15]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[14]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[13]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[12]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[11]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[10]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[9]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[8]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[7]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[6]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port LED[5]
+WARNING: [Synth 8-3331] design apatb_Cipher_top has unconnected port UART_RTS
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_control_unit/state_d_reg[3] )
+WARNING: [Synth 8-3332] Sequential element (dout1_reg[7]) is unused and will be removed from module AESL_automem_RoundKey.
+WARNING: [Synth 8-3332] Sequential element (dout1_reg[6]) is unused and will be removed from module AESL_automem_RoundKey.
+WARNING: [Synth 8-3332] Sequential element (dout1_reg[5]) is unused and will be removed from module AESL_automem_RoundKey.
+WARNING: [Synth 8-3332] Sequential element (dout1_reg[4]) is unused and will be removed from module AESL_automem_RoundKey.
+WARNING: [Synth 8-3332] Sequential element (dout1_reg[3]) is unused and will be removed from module AESL_automem_RoundKey.
+WARNING: [Synth 8-3332] Sequential element (dout1_reg[2]) is unused and will be removed from module AESL_automem_RoundKey.
+WARNING: [Synth 8-3332] Sequential element (dout1_reg[1]) is unused and will be removed from module AESL_automem_RoundKey.
+WARNING: [Synth 8-3332] Sequential element (dout1_reg[0]) is unused and will be removed from module AESL_automem_RoundKey.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][31]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][30]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][29]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][28]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][27]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][26]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][25]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][24]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][23]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][22]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][21]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][20]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][19]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][18]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][17]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][16]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][15]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][14]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][13]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][12]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][11]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][10]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][9]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][8]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][7]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][6]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][5]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][4]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][3]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][2]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][1]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[1][0]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][31]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][30]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][29]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][28]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][27]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][26]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][25]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][24]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][23]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][22]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][21]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][20]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][19]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][18]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][17]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][16]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][15]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][14]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][13]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][12]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][11]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][10]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][9]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][8]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][7]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][6]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][5]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][4]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][3]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][2]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][1]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/mem_reg[0][0]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[31]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[30]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[29]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[28]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[27]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[26]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[25]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[24]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[23]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[22]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[21]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[20]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[19]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[18]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[17]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[16]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[15]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[14]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[13]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[12]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[11]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[10]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[9]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[8]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[7]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[6]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[5]) is unused and will be removed from module apatb_Cipher_top.
+WARNING: [Synth 8-3332] Sequential element (u_control_unit/U_state_2/dout0_reg[4]) is unused and will be removed from module apatb_Cipher_top.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:56 . Memory (MB): peak = 1735.574 ; gain = 513.129 ; free physical = 2838 ; free virtual = 13708
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:01:05 . Memory (MB): peak = 1735.574 ; gain = 513.129 ; free physical = 2723 ; free virtual = 13593
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:01:09 . Memory (MB): peak = 1777.418 ; gain = 554.973 ; free physical = 2665 ; free virtual = 13535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:01:10 . Memory (MB): peak = 1801.441 ; gain = 578.996 ; free physical = 2658 ; free virtual = 13528
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:01:11 . Memory (MB): peak = 1801.441 ; gain = 578.996 ; free physical = 2658 ; free virtual = 13528
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:01:11 . Memory (MB): peak = 1801.441 ; gain = 578.996 ; free physical = 2658 ; free virtual = 13528
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:01:11 . Memory (MB): peak = 1801.441 ; gain = 578.996 ; free physical = 2658 ; free virtual = 13528
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:01:11 . Memory (MB): peak = 1801.441 ; gain = 578.996 ; free physical = 2658 ; free virtual = 13528
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:01:11 . Memory (MB): peak = 1801.441 ; gain = 578.996 ; free physical = 2658 ; free virtual = 13529
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:01:11 . Memory (MB): peak = 1801.441 ; gain = 578.996 ; free physical = 2658 ; free virtual = 13529
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++-----------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name      | RTL Name                             | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-----------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|apatb_Cipher_top | u_control_unit/uart_busy_ne_d_reg[8] | 9      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++-----------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |Cipher_0      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |Cipher_0 |     1|
+|2     |BUFG     |     1|
+|3     |CARRY4   |     6|
+|4     |LUT1     |     9|
+|5     |LUT2     |    35|
+|6     |LUT3     |    28|
+|7     |LUT4     |    55|
+|8     |LUT5     |   393|
+|9     |LUT6     |   635|
+|10    |MUXF7    |   205|
+|11    |MUXF8    |    96|
+|12    |SRL16E   |     1|
+|13    |FDCE     |    28|
+|14    |FDRE     |  1650|
+|15    |FDSE     |     7|
+|16    |IBUF     |    16|
+|17    |OBUF     |    23|
+|18    |OBUFT    |    11|
++------+---------+------+
+
+Report Instance Areas: 
++------+----------------------+----------------------+------+
+|      |Instance              |Module                |Cells |
++------+----------------------+----------------------+------+
+|1     |top                   |                      |  3239|
+|2     |  u_uart_wrapper      |uart_wrapper          |   113|
+|3     |    u_uart            |UART                  |    95|
+|4     |      uart_rx_i       |UART_RX               |    35|
+|5     |      uart_tx_i       |UART_TX               |    40|
+|6     |  u_SevenSeg_Top      |SevenSeg_Top          |    55|
+|7     |  u_control_unit      |control_unit          |  2980|
+|8     |    mem_inst_RoundKey |AESL_automem_RoundKey |  2338|
+|9     |    mem_inst_state    |AESL_automem_state    |   467|
++------+----------------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:01:11 . Memory (MB): peak = 1801.441 ; gain = 578.996 ; free physical = 2658 ; free virtual = 13529
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 196 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 1801.441 ; gain = 199.395 ; free physical = 2716 ; free virtual = 13586
+Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:01:12 . Memory (MB): peak = 1801.449 ; gain = 578.996 ; free physical = 2723 ; free virtual = 13593
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 323 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+77 Infos, 196 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:13 . Memory (MB): peak = 1833.457 ; gain = 635.840 ; free physical = 2761 ; free virtual = 13631
+INFO: [Common 17-1381] The checkpoint '/media/deepraj/Work/workspace/Lecture/Hardwar_security/homework/tiny-AES-c/aes_test_3/aes_test.runs/synth_1/apatb_Cipher_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file apatb_Cipher_top_utilization_synth.rpt -pb aes_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.13 . Memory (MB): peak = 1857.469 ; gain = 0.000 ; free physical = 2767 ; free virtual = 13640
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  7 20:13:17 2020...
