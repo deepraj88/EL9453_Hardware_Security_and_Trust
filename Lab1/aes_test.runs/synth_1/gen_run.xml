@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-2" LaunchTime="1581124311">
-  <File Type="VDS-TIMING-PB" Name="apatb_Cipher_top_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="apatb_Cipher_top_timing_summary_synth.rpt"/>
+  <File Type="PA-TCL" Name="apatb_Cipher_top.tcl"/>
+  <File Type="REPORTS-TCL" Name="apatb_Cipher_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="apatb_Cipher_top.vds"/>
   <File Type="RDS-DCP" Name="apatb_Cipher_top.dcp"/>
   <File Type="RDS-UTIL-PB" Name="aes_top_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="apatb_Cipher_top_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="apatb_Cipher_top_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="apatb_Cipher_top.vds"/>
-  <File Type="REPORTS-TCL" Name="apatb_Cipher_top_reports.tcl"/>
-  <File Type="PA-TCL" Name="apatb_Cipher_top.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/verilog/AESL_automem_RoundKey.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../aes.prj/solution1/sim/verilog/AESL_automem_RoundKey.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../homework/tiny-AES-c/aes.prj/solution1/sim/verilog/AESL_automem_RoundKey.v"/>
         <Attr Name="ImportTime" Val="1550531454"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -22,7 +19,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/verilog/AESL_automem_state.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../aes.prj/solution1/sim/verilog/AESL_automem_state.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../homework/tiny-AES-c/aes.prj/solution1/sim/verilog/AESL_automem_state.v"/>
         <Attr Name="ImportTime" Val="1550531454"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -95,7 +92,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/tiny-AES-c/Cipher.autotb.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Cipher.autotb.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../homework/tiny-AES-c/Cipher.autotb.v"/>
         <Attr Name="ImportTime" Val="1550531453"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
