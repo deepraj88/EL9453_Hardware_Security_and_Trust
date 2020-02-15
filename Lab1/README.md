@@ -1,6 +1,6 @@
 Pl. Follow the steps in the AES Implementation Steps.pdf and let me know if there is any errors/issues at ksm469@nyu.edu
 
-** File Description:
+## File Description:
 
 tb_aes_top      -> Simulation Top File
 Cipher.autotb.v -> Main Top File
@@ -17,7 +17,7 @@ Cipher.v -> Top File.
 AddRoundKey.v, SubBytes.v, SubBytes_sbox.v
 
 
-** Procedue:
+## Procedue:
 Run the Simulation, Synthesis and C/RTL cosimulation in Vivado HLS for Cipher and InvCipher from AES..
 Do 'Export RTL'
 Go to the solution1(or name of your solution)/sim/ip. Take the Zip file. 
@@ -26,7 +26,7 @@ Change the SubBytes_sbox.v: line 24.
 Add all the above files. tb_aes_top.v should be added as simulation file. This is used for behavioural simulation.
 Add the constraint file to run on FPGA.
 
-** Reference Testcases:
+## Reference Testcases:
 
 
 [1]
