@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: NYU
+// Engineer: Deepraj Soni
 // 
 // Create Date: 07/26/2019 06:26:17 PM
 // Design Name: 
