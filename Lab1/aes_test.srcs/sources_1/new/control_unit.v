@@ -183,7 +183,7 @@ wire        uart_busy_ne;
 reg  [09:0] uart_busy_ne_d;
 
 reg  [07:0] tx_counter;
-reg  [07:0] uart_rx_d[0:(MEM0_DATA_WIDTH/8-1)];
+reg  [07:0] uart_rx_d[0:(MEM0_DATA_WIDTH/8+1)];
 
 //FSM
 localparam SIZE = 4;
@@ -211,16 +211,19 @@ wire           state_ch;
 wire mem0_ce;
 wire mem0_we;
 wire [MEM0_ADDR_WIDTH-1:0] mem0_add;
+reg  [MEM0_ADDR_WIDTH-1:0] mem0_add_d;
 wire [MEM0_DATA_WIDTH-1:0] state_mem_d0;
 reg  [MEM0_DATA_WIDTH-1:0] mem0_mem_q0;
 wire mem1_ce;
 wire mem1_we;
 wire [MEM1_ADDR_WIDTH-1:0] mem1_add;
+reg  [MEM1_ADDR_WIDTH-1:0] mem1_add_d;
 wire [MEM1_DATA_WIDTH-1:0] key_mem_d0;
 reg  [MEM1_DATA_WIDTH-1:0] mem1_mem_q0;
 wire mem2_ce;
 wire mem2_we;
 wire [MEM2_ADDR_WIDTH-1:0] mem2_add;
+reg  [MEM2_ADDR_WIDTH-1:0] mem2_add_d;
 wire [MEM2_DATA_WIDTH-1:0] mem2_mem_d0;
 reg  [MEM2_DATA_WIDTH-1:0] mem2_mem_q0;
 
@@ -228,25 +231,26 @@ integer i;
 
 always @(posedge CLK) begin
   if(!CPU_RESETN) begin
-    for(i=0;i<(MEM0_DATA_WIDTH/8)-1;i = i +1) begin
+    for(i=0;i<(MEM0_DATA_WIDTH/8)+1;i = i +1) begin
+    uart_rx_d[i] <= 'd0;
+    end
+  end else if(state_ch) begin
+    for(i=0;i<(MEM0_DATA_WIDTH/8)+1;i = i +1) begin
     uart_rx_d[i] <= 'd0;
     end
   end else begin
     if(I_UART_RX_VLD) begin    
       uart_rx_d[0] <= I_UART_RX;
-      for(i=1;i<(MEM0_DATA_WIDTH/8)-1;i = i +1) begin
+      for(i=1;i<(MEM0_DATA_WIDTH/8)+1;i = i +1) begin
       uart_rx_d[i] <= uart_rx_d[i-1];
       end
     end
   end
 end
 
-
-
-
 assign mem0_ce = (tx_counter >= 16 && tx_counter < INPUT_SIZE*(MEM0_DATA_WIDTH/8)+16) && ((state_d == VIEW_IP) || ((state_d == ENTER_IP) && I_UART_RX_VLD));
 assign mem0_we = (state_d == ENTER_IP) && (((tx_counter -16)%(MEM0_DATA_WIDTH/8)) == (MEM0_DATA_WIDTH/8 - 1));
-assign mem0_add = (tx_counter - 16)*8/MEM0_DATA_WIDTH;
+assign mem0_add = tx_counter > 16 ? (tx_counter - 16)*8/MEM0_DATA_WIDTH  : 'd0;
 assign state_mem_d0 = O_MEM0_Q0[MEM0_DATA_WIDTH - ((tx_counter-16)%(MEM0_DATA_WIDTH/8))*8-1 -:8];
 always @(*) begin
     mem0_mem_q0[07:0] = I_UART_RX;
@@ -254,12 +258,19 @@ always @(*) begin
 	mem0_mem_q0[(i+2)*8-1 -: 8] = uart_rx_d[i];
     end
 end    
+always @(posedge CLK) begin
+  if(!CPU_RESETN) begin
+    mem0_add_d <= 'd0;
+  end else if(I_UART_RX_VLD || O_UART_TX_VLD)begin
+    mem0_add_d <= mem0_add;
+  end
+end
 //`if MEM0_DATA_WIDTH == 8
 //assign mem0_mem_q0 = I_UART_RX;
 //`   
 assign mem1_ce = (tx_counter >= 16 && tx_counter < KEY_SIZE*(MEM1_DATA_WIDTH/8)+16) && ((state_d == VIEW_KEY) || ((state_d == ENTER_KEY) && I_UART_RX_VLD));
 assign mem1_we = (state_d == ENTER_KEY) && (((tx_counter -16)%(MEM1_DATA_WIDTH/8)) == (MEM1_DATA_WIDTH/8 - 1));
-assign mem1_add = (tx_counter - 16)*8/MEM1_DATA_WIDTH;
+assign mem1_add = tx_counter > 16? (tx_counter - 16)*8/MEM1_DATA_WIDTH : 'd0;
 assign key_mem_d0 = O_MEM1_Q0[MEM1_DATA_WIDTH-((tx_counter-16)%(MEM1_DATA_WIDTH/8))*8-1 -:8];
 //assign mem1_mem_q0 = I_UART_RX;
 always @(*) begin
@@ -268,6 +279,13 @@ always @(*) begin
 	mem1_mem_q0[(i+2)*8-1 -: 8] = uart_rx_d[i];
     end
 end    
+always @(posedge CLK) begin
+  if(!CPU_RESETN) begin
+    mem1_add_d <= 'd0;
+  end else if(I_UART_RX_VLD || O_UART_TX_VLD)begin
+    mem1_add_d <= mem1_add;
+  end
+end
 `ifdef COMMON_IO_MEMORY
 assign mem2_ce = 'd0;
 assign mem2_we = 'd0;
@@ -279,7 +297,7 @@ end
 `else
 assign mem2_ce = (tx_counter >= 16 && tx_counter < MEM2_SIZE*(MEM2_DATA_WIDTH/8)+16) && ((state_d == VIEW_OP) || ((state_d == ENTER_OP) && I_UART_RX_VLD));
 assign mem2_we = (state_d == ENTER_OP) && (((tx_counter -16)%(MEM2_DATA_WIDTH/8)) == (MEM2_DATA_WIDTH/8 - 1));
-assign mem2_add = (tx_counter - 16)*8/MEM2_DATA_WIDTH;
+assign mem2_add = tx_counter > 16 ? (tx_counter - 16)*8/MEM2_DATA_WIDTH : 'd0;
 assign mem2_mem_d0 = O_MEM2_Q0[MEM2_DATA_WIDTH-((tx_counter-16)%(MEM2_DATA_WIDTH/8))*8-1 -:8];
 //assign mem2_mem_q0 = I_UART_RX;
 always @(*) begin
@@ -288,6 +306,13 @@ always @(*) begin
 	mem2_mem_q0[(i+2)*8-1 -: 8] = uart_rx_d[i];
     end
 end    
+always @(posedge CLK) begin
+  if(!CPU_RESETN) begin
+    mem2_add_d <= 'd0;
+  end else if(I_UART_RX_VLD || O_UART_TX_VLD)begin
+    mem2_add_d <= mem2_add;
+  end
+end
 `endif
 wire [07:0] uart_byte_count = ((state_d == VIEW_KEY) || (state_d == ENTER_KEY)) ? KEY_SIZE*(MEM1_DATA_WIDTH/8)+16 : (((state_d == VIEW_IP) || (state_d == ENTER_IP)) ? INPUT_SIZE*(MEM0_DATA_WIDTH/8)+16 : MEM2_SIZE*(MEM2_DATA_WIDTH/8)+16);
 
@@ -295,60 +320,43 @@ wire [07:0] uart_byte_count = ((state_d == VIEW_KEY) || (state_d == ENTER_KEY)) 
 always @(*) begin
 next_state = IDLE;
  case(state_d)
-    IDLE          : if (I_SW[15:09] == 0) begin
-                          next_state = IDLE;
-                    end else if(I_SW[15:09] == 1) begin
-                          next_state = ENTER_KEY;
-                    end else if(I_SW[15:09] == 2 || I_SW[15:09] == 4) begin
+    IDLE          : if ((uart_rx_d[1] == 'h11) && (uart_rx_d[0] == 'h11)) begin
                           next_state = ENTER_IP;
-                    end else if(I_SW[15:09] == 8) begin
+                    end else if((uart_rx_d[1] == 'h22) && (uart_rx_d[0] == 'h22)) begin
+                          next_state = ENTER_KEY;
+                    end else if((uart_rx_d[1] == 'h33) && (uart_rx_d[0] == 'h33)) begin
                           next_state = ENABLE;
-                    end else if(I_SW[15:09] == 16) begin
-                          next_state = VIEW_KEY;
-                    end else if(I_SW[15:09] == 32 || I_SW[15:09] == 64) begin
+                    end else if((uart_rx_d[1] == 'h44) && (uart_rx_d[0] == 'h44)) begin
                           next_state = VIEW_IP;
+                    end else if((uart_rx_d[1] == 'h55) && (uart_rx_d[0] == 'h55)) begin
+                          next_state = VIEW_KEY;
                     end else begin
-                      next_state = INVALID;
+                      next_state = IDLE;
                     end
-    ENTER_KEY     : if (I_SW[15:09] == 0) begin
+    ENTER_KEY     : if ((mem1_add_d == MEM1_DEPTH-1) && ((mem1_add == 0) || (mem1_add == MEM1_DEPTH))) begin
                           next_state = IDLE;
-                    end else if(I_SW[15:09] == 1) begin
+                    end else begin
                           next_state = ENTER_KEY;
-                    end else begin
-                          next_state = INVALID;
 		    end
-    ENTER_IP      : if (I_SW[15:09] == 0) begin
+    ENTER_IP      : if ((mem0_add_d == MEM0_DEPTH-1) && ((mem0_add == 0) || (mem0_add == MEM0_DEPTH))) begin
                           next_state = IDLE;
-                    end else if(I_SW[15:09] == 2 || I_SW[15:09] == 4) begin
+                    end else begin
                           next_state = ENTER_IP;
-                    end else begin
-                          next_state = INVALID;
 		    end
-    ENABLE        : if (I_SW[15:09] == 0) begin
+    ENABLE        : if (I_AP_DONE) begin
                           next_state = IDLE;
-                    end else if(I_SW[15:09] == 8) begin
+                    end else begin
                           next_state = ENABLE;
-                    end else begin
-                          next_state = INVALID;
 		    end
-    VIEW_KEY      : if (I_SW[15:09] == 0) begin
+    VIEW_KEY      : if ((mem1_add_d == MEM1_DEPTH-1) && ((mem1_add == 0) || (mem1_add == MEM1_DEPTH))) begin
                           next_state = IDLE;
-                    end else if(I_SW[15:09] == 16) begin
+                    end else begin
                           next_state = VIEW_KEY;
-                    end else begin
-                          next_state = INVALID;
 		    end
-    VIEW_IP       : if (I_SW[15:09] == 0) begin
+    VIEW_IP       :if ((mem0_add_d == MEM0_DEPTH-1) && ((mem0_add == 0) || (mem0_add == MEM0_DEPTH))) begin
                           next_state = IDLE;
-                    end else if(I_SW[15:09] == 32 || I_SW[15:09] == 64) begin
+                    end else begin
                           next_state = VIEW_IP;
-                    end else begin
-                          next_state = INVALID;
-		    end
-    INVALID       : if (I_SW[15:09] == 0) begin
-                          next_state = IDLE;
-                    end else begin
-                          next_state = INVALID;
 		    end
     default       : next_state = IDLE;
   endcase
@@ -494,6 +502,7 @@ always @(*) begin
 		    end
     VIEW_KEY      : begin O_LED_DISPLAY=32'hdc7e8c11;
                         O_UART_TX = mem1_ce ? key_mem_d0 : (tx_counter < 16) ?vkey_uart[(17-tx_counter)*8-1 -: 8] : 'd0;
+                          O_LED_DISPLAY[07:0] = mem1_add_d;
 		    end
     VIEW_IP       : begin O_LED_DISPLAY=32'hdc19cc11;
                         O_UART_TX = mem0_ce ? state_mem_d0 : mem1_ce ? key_mem_d0 : mem2_ce ? mem2_mem_d0 :          (tx_counter < 16) ?v_ip_uart[(17-tx_counter)*8-1 -: 8] : 'd0;
