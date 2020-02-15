@@ -18,13 +18,13 @@ AddRoundKey.v, SubBytes.v, SubBytes_sbox.v
 
 
 ## Procedue:
-Run the Simulation, Synthesis and C/RTL cosimulation in Vivado HLS for Cipher and InvCipher from AES..
-Do 'Export RTL'
-Go to the solution1(or name of your solution)/sim/ip. Take the Zip file. 
-Create an RTL project in Vivado and add the extracted files from Zip.
-Change the SubBytes_sbox.v: line 24.
-Add all the above files. tb_aes_top.v should be added as simulation file. This is used for behavioural simulation.
-Add the constraint file to run on FPGA.
+* Run the Simulation, Synthesis and C/RTL cosimulation in Vivado HLS for Cipher and InvCipher from AES.
+* Do 'Export RTL'
+* Go to the solution1(or name of your solution)/sim/ip. Take the Zip file. 
+* Create an RTL project in Vivado and add the extracted files from Zip.
+* Change the SubBytes_sbox.v: line 24.
+* Add all the above files. tb_aes_top.v should be added as simulation file. This is used for behavioural simulation.
+* Add the constraint file to run on FPGA.
 
 ## Reference Testcases:
 
