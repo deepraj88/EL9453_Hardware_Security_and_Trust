@@ -10,6 +10,7 @@
 
 #include "aes.h"
 
+typedef uint8_t state_t[4][4];
 
 static void phex(uint8_t* str);
 static int test_encrypt_cbc(void);
@@ -121,10 +122,12 @@ static int test_encrypt_ecb(void)
 #endif
 
     uint8_t in[]  = { 0x6b, 0xc1, 0xbe, 0xe2, 0x2e, 0x40, 0x9f, 0x96, 0xe9, 0x3d, 0x7e, 0x11, 0x73, 0x93, 0x17, 0x2a };
+    state_t buf[]  = { {0x6b, 0xc1, 0xbe, 0xe2}, {0x2e, 0x40, 0x9f, 0x96},{0xe9, 0x3d, 0x7e, 0x11}, {0x73, 0x93, 0x17, 0x2a} };
     struct AES_ctx ctx;
 
+    AES(&ctx, key, in);
     AES_init_ctx(&ctx, key);
-    AES_ECB_encrypt(&ctx, in);
+    AES_ECB_encrypt(&ctx, buf);
 
     printf("ECB encrypt: ");
 

@@ -149,7 +149,7 @@ static uint8_t getSBoxInvert(uint8_t num)
 #define getSBoxInvert(num) (rsbox[(num)])
 
 // This function produces Nb(Nr+1) round keys. The round keys are used in each round to decrypt the states. 
-static void KeyExpansion(uint8_t* RoundKey, const uint8_t* Key)
+void KeyExpansion(uint8_t RoundKey[240], const uint8_t Key[16])
 {
   unsigned i, j, k;
   uint8_t tempa[4]; // Used for the column/row operations
@@ -481,7 +481,17 @@ void AES_ECB_decrypt(struct AES_ctx* ctx, uint8_t* buf)
 
 #endif // #if defined(ECB) && (ECB == 1)
 
+void AES_ECB_encrypt2(struct AES_ctx *ctx, state_t* buf)
+{
+  // The next function call encrypts the PlainText with the Key using AES algorithm.
+  Cipher(buf, ctx->RoundKey);
+}
 
+void AES(struct AES_ctx* ctx, uint8_t key[16], state_t in[16])
+{
+    AES_init_ctx(&ctx, key);
+    AES_ECB_encrypt2(&ctx, in);
+}
 
 
 
