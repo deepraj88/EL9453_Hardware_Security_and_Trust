@@ -157,10 +157,14 @@ void KeyExpansion(uint8_t RoundKey[240], const uint8_t Key[16])
   // The first round key is the key itself.
   for (i = 0; i < Nk; ++i)
   {
+	  j = i*4;
     RoundKey[(i * 4) + 0] = Key[(i * 4) + 0];
     RoundKey[(i * 4) + 1] = Key[(i * 4) + 1];
     RoundKey[(i * 4) + 2] = Key[(i * 4) + 2];
     RoundKey[(i * 4) + 3] = Key[(i * 4) + 3];
+//    printf("RK[%d+0] = %x, RK[%d+0] = %x, RK[%d+0] = %x, RK[%d+0] = %x\n", j,RoundKey[j + 0], j+1,RoundKey[j + 1],
+//    	j+2, RoundKey[j + 2], j+3, RoundKey[j + 3]);
+
   }
 
   // All other round keys are found from the previous round keys.
@@ -199,7 +203,6 @@ void KeyExpansion(uint8_t RoundKey[240], const uint8_t Key[16])
         tempa[2] = getSBoxValue(tempa[2]);
         tempa[3] = getSBoxValue(tempa[3]);
       }
-
       tempa[0] = tempa[0] ^ Rcon[i/Nk];
     }
 #if defined(AES256) && (AES256 == 1)
@@ -219,6 +222,9 @@ void KeyExpansion(uint8_t RoundKey[240], const uint8_t Key[16])
     RoundKey[j + 1] = RoundKey[k + 1] ^ tempa[1];
     RoundKey[j + 2] = RoundKey[k + 2] ^ tempa[2];
     RoundKey[j + 3] = RoundKey[k + 3] ^ tempa[3];
+//    printf("RK[%d+0] = %x, RK[%d+0] = %x, RK[%d+0] = %x, RK[%d+0] = %x\n", j,RoundKey[j + 0], j+1,RoundKey[j + 1],
+//    	j+2, RoundKey[j + 2], j+3, RoundKey[j + 3]);
+
   }
 }
 
@@ -487,10 +493,10 @@ void AES_ECB_encrypt2(struct AES_ctx *ctx, state_t* buf)
   Cipher(buf, ctx->RoundKey);
 }
 
-void AES(struct AES_ctx* ctx, uint8_t key[16], state_t in[16])
+void AES(struct AES_ctx* ctx, uint8_t key[16], state_t* in)
 {
-    AES_init_ctx(&ctx, key);
-    AES_ECB_encrypt2(&ctx, in);
+    AES_init_ctx(ctx, key);
+    AES_ECB_encrypt2(ctx, in);
 }
 
 
