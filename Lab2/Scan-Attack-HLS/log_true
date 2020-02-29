@@ -1,0 +1,291 @@
+
+Testing AES128
+
+
+loop4 started
+rk0[0] = 28, rk1[0] = 29
+rk0[1] = 22, rk1[1] = 23
+rk0[2] = be, rk1[2] = bf
+rk0[3] = 84, rk1[3] = 85
+rk0[4] = e0, rk1[4] = e1
+rk0[5] = 6c, rk1[5] = 6d
+rk0[6] = d6, rk1[6] = d7
+rk0[7] = ae, rk1[7] = af
+rk0[8] = 52, rk1[8] = 53
+rk0[9] = 90, rk1[9] = 91
+rk0[10] = 48, rk1[10] = 49
+rk0[11] = f0, rk1[11] = f1
+rk0[12] = f0, rk1[12] = f1
+rk0[13] = ba, rk1[13] = bb
+rk0[14] = e8, rk1[14] = e9
+rk0[15] = ea, rk1[15] = eb  RK: 2923BE84E16CD6AE529049F1F1BBE9EB    SUCCESS!!   Loop = 1004
+
+loop4 started
+rk0[0] = b2, rk1[0] = b3
+rk0[1] = a6, rk1[1] = a7
+rk0[2] = da, rk1[2] = db
+rk0[3] = 3c, rk1[3] = 3d
+rk0[4] = 86, rk1[4] = 87
+rk0[5] = c, rk1[5] = d
+rk0[6] = 3e, rk1[6] = 3f
+rk0[7] = 98, rk1[7] = 99
+rk0[8] = 24, rk1[8] = 25
+rk0[9] = 5e, rk1[9] = 5f
+rk0[10] = c, rk1[10] = d
+rk0[11] = 1c, rk1[11] = 1d
+rk0[12] = 6, rk1[12] = 7
+rk0[13] = b6, rk1[13] = b7
+rk0[14] = 46, rk1[14] = 47
+rk0[15] = de, rk1[15] = df  RK: B3A6DB3C870C3E99245E0D1C06B747DE    SUCCESS!!   Loop = 39786
+
+loop4 started
+rk0[0] = b2, rk1[0] = b3
+rk0[1] = 12, rk1[1] = 13
+rk0[2] = 4c, rk1[2] = 4d
+rk0[3] = c8, rk1[3] = c9
+rk0[4] = 42, rk1[4] = 43
+rk0[5] = ba, rk1[5] = bb
+rk0[6] = 8a, rk1[6] = 8b
+rk0[7] = a6, rk1[7] = a7
+rk0[8] = 1e, rk1[8] = 1f
+rk0[9] = 2, rk1[9] = 3
+rk0[10] = 5a, rk1[10] = 5b
+rk0[11] = 7c, rk1[11] = 7d
+rk0[12] = 8, rk1[12] = 9
+rk0[13] = 38, rk1[13] = 39
+rk0[14] = 24, rk1[14] = 25
+rk0[15] = 1e, rk1[15] = 1f  RK: B3124DC843BB8BA61F035A7D0938251F    SUCCESS!!   Loop = 9354
+
+loop4 started
+rk0[0] = 5c, rk1[0] = 5d
+rk0[1] = d4, rk1[1] = d5
+rk0[2] = ca, rk1[2] = cb
+rk0[3] = fc, rk1[3] = fd
+rk0[4] = 96, rk1[4] = 97
+rk0[5] = f4, rk1[5] = f5
+rk0[6] = 44, rk1[6] = 45
+rk0[7] = 3a, rk1[7] = 3b
+rk0[8] = 12, rk1[8] = 13
+rk0[9] = c, rk1[9] = d
+rk0[10] = 88, rk1[10] = 89
+rk0[11] = a, rk1[11] = b
+rk0[12] = 1c, rk1[12] = 1d
+rk0[13] = da, rk1[13] = db
+rk0[14] = ae, rk1[14] = af
+rk0[15] = 32, rk1[15] = 33  RK: 5DD4CBFC96F5453B130D890A1CDBAE32    SUCCESS!!   Loop = 55322
+
+loop4 started
+rk0[0] = 20, rk1[0] = 21
+rk0[1] = 9a, rk1[1] = 9b
+rk0[2] = 50, rk1[2] = 51
+rk0[3] = ee, rk1[3] = ef
+rk0[4] = 40, rk1[4] = 41
+rk0[5] = 78, rk1[5] = 79
+rk0[6] = 36, rk1[6] = 37
+rk0[7] = fc, rk1[7] = fd
+rk0[8] = 12, rk1[8] = 13
+rk0[9] = 48, rk1[9] = 49
+rk0[10] = 32, rk1[10] = 33
+rk0[11] = f6, rk1[11] = f7
+rk0[12] = 9e, rk1[12] = 9f
+rk0[13] = 7c, rk1[13] = 7d
+rk0[14] = 48, rk1[14] = 49
+rk0[15] = dc, rk1[15] = dd  RK: 209A50EE407836FD124932F69E7D49DC    SUCCESS!!   Loop = 40319
+
+loop4 started
+rk0[0] = ac, rk1[0] = ad
+rk0[1] = 4e, rk1[1] = 4f
+rk0[2] = 14, rk1[2] = 15
+rk0[3] = f2, rk1[3] = f3
+rk0[4] = 44, rk1[4] = 45
+rk0[5] = 40, rk1[5] = 41
+rk0[6] = 66, rk1[6] = 67
+rk0[7] = d0, rk1[7] = d1
+rk0[8] = 6a, rk1[8] = 6b
+rk0[9] = c4, rk1[9] = c5
+rk0[10] = 30, rk1[10] = 31
+rk0[11] = b6, rk1[11] = b7
+rk0[12] = 32, rk1[12] = 33
+rk0[13] = 3a, rk1[13] = 3b
+rk0[14] = a0, rk1[14] = a1
+rk0[15] = 22, rk1[15] = 23  RK: AD4F14F2444066D06BC430B7323BA122    SUCCESS!!   Loop = 38652
+
+loop4 started
+rk0[0] = f6, rk1[0] = f7
+rk0[1] = 22, rk1[1] = 23
+rk0[2] = 90, rk1[2] = 91
+rk0[3] = 9c, rk1[3] = 9d
+rk0[4] = e0, rk1[4] = e1
+rk0[5] = 8a, rk1[5] = 8b
+rk0[6] = 1e, rk1[6] = 1f
+rk0[7] = da, rk1[7] = db
+rk0[8] = b0, rk1[8] = b1
+rk0[9] = ca, rk1[9] = cb
+rk0[10] = 98, rk1[10] = 99
+rk0[11] = 2, rk1[11] = 3
+rk0[12] = b8, rk1[12] = b9
+rk0[13] = 72, rk1[13] = 73
+rk0[14] = 9c, rk1[14] = 9d
+rk0[15] = 48, rk1[15] = 49  RK: F622919DE18B1FDAB0CA9902B9729D49    SUCCESS!!   Loop = 11139
+
+loop4 started
+rk0[0] = 2c, rk1[0] = 2d
+rk0[1] = 80, rk1[1] = 81
+rk0[2] = 7e, rk1[2] = 7f
+rk0[3] = c4, rk1[3] = c5
+rk0[4] = 98, rk1[4] = 99
+rk0[5] = d4, rk1[5] = d5
+rk0[6] = e8, rk1[6] = e9
+rk0[7] = 80, rk1[7] = 81
+rk0[8] = b2, rk1[8] = b3
+rk0[9] = ea, rk1[9] = eb
+rk0[10] = c8, rk1[10] = c9
+rk0[11] = cc, rk1[11] = cd
+rk0[12] = 52, rk1[12] = 53
+rk0[13] = be, rk1[13] = bf
+rk0[14] = 66, rk1[14] = 67
+rk0[15] = d6, rk1[15] = d7  RK: 2C807EC599D5E980B2EAC9CC53BF67D6    SUCCESS!!   Loop = 35719
+
+loop4 started
+rk0[0] = be, rk1[0] = bf
+rk0[1] = 14, rk1[1] = 15
+rk0[2] = d6, rk1[2] = d7
+rk0[3] = 7e, rk1[3] = 7f
+rk0[4] = 2c, rk1[4] = 2d
+rk0[5] = dc, rk1[5] = dd
+rk0[6] = 8e, rk1[6] = 8f
+rk0[7] = 66, rk1[7] = 67
+rk0[8] = 82, rk1[8] = 83
+rk0[9] = ee, rk1[9] = ef
+rk0[10] = 56, rk1[10] = 57
+rk0[11] = 48, rk1[11] = 49
+rk0[12] = 60, rk1[12] = 61
+rk0[13] = fe, rk1[13] = ff
+rk0[14] = 68, rk1[14] = 69
+rk0[15] = 8e, rk1[15] = 8f  RK: BF14D67E2DDC8E6683EF574961FF698F    SUCCESS!!   Loop = 238
+
+loop4 started
+rk0[0] = 60, rk1[0] = 61
+rk0[1] = cc, rk1[1] = cd
+rk0[2] = d0, rk1[2] = d1
+rk0[3] = 1e, rk1[3] = 1f
+rk0[4] = 9c, rk1[4] = 9d
+rk0[5] = 9c, rk1[5] = 9d
+rk0[6] = 16, rk1[6] = 17
+rk0[7] = 72, rk1[7] = 73
+rk0[8] = 72, rk1[8] = 73
+rk0[9] = e6, rk1[9] = e7
+rk0[10] = 1c, rk1[10] = 1d
+rk0[11] = f0, rk1[11] = f1
+rk0[12] = 84, rk1[12] = 85
+rk0[13] = 4e, rk1[13] = 4f
+rk0[14] = 4a, rk1[14] = 4b
+rk0[15] = 76, rk1[15] = 77  RK: 61CDD11E9D9C167272E61DF0844F4A77    SUCCESS!!   Loop = 23528
+
+loop4 started
+rk0[0] = 2, rk1[0] = 3
+rk0[1] = d6, rk1[1] = d7
+rk0[2] = e8, rk1[2] = e9
+rk0[3] = 38, rk1[3] = 39
+rk0[4] = 2c, rk1[4] = 2d
+rk0[5] = 52, rk1[5] = 53
+rk0[6] = ca, rk1[6] = cb
+rk0[7] = c8, rk1[7] = c9
+rk0[8] = 12, rk1[8] = 13
+rk0[9] = 1e, rk1[9] = 1f
+rk0[10] = 32, rk1[10] = 33
+rk0[11] = 74, rk1[11] = 75
+rk0[12] = 9e, rk1[12] = 9f
+rk0[13] = c, rk1[13] = d
+rk0[14] = f4, rk1[14] = f5
+rk0[15] = d4, rk1[15] = d5  RK: 02D7E8392C53CBC9121E33749E0CF4D5    SUCCESS!!   Loop = 31509
+
+loop4 started
+rk0[0] = d4, rk1[0] = d5
+rk0[1] = 9e, rk1[1] = 9f
+rk0[2] = d4, rk1[2] = d5
+rk0[3] = a4, rk1[3] = a5
+rk0[4] = 58, rk1[4] = 59
+rk0[5] = 7e, rk1[5] = 7f
+rk0[6] = 34, rk1[6] = 35
+rk0[7] = ce, rk1[7] = cf
+rk0[8] = 32, rk1[8] = 33
+rk0[9] = 22, rk1[9] = 23
+rk0[10] = f4, rk1[10] = f5
+rk0[11] = cc, rk1[11] = cd
+rk0[12] = ce, rk1[12] = cf
+rk0[13] = d2, rk1[13] = d3
+rk0[14] = 90, rk1[14] = 91
+rk0[15] = 2c, rk1[15] = 2d  RK: D49FD4A4597E35CF3222F4CCCFD3902D    SUCCESS!!   Loop = 20269
+
+loop4 started
+rk0[0] = 48, rk1[0] = 49
+rk0[1] = d2, rk1[1] = d3
+rk0[2] = 8e, rk1[2] = 8f
+rk0[3] = 74, rk1[3] = 75
+rk0[4] = e6, rk1[4] = e7
+rk0[5] = d8, rk1[5] = d9
+rk0[6] = 1c, rk1[6] = 1d
+rk0[7] = 2a, rk1[7] = 2b
+rk0[8] = e4, rk1[8] = e5
+rk0[9] = c0, rk1[9] = c1
+rk0[10] = f6, rk1[10] = f7
+rk0[11] = 2a, rk1[11] = 2b
+rk0[12] = 78, rk1[12] = 79
+rk0[13] = 80, rk1[13] = 81
+rk0[14] = 86, rk1[14] = 87
+rk0[15] = 44, rk1[15] = 45  RK: 48D38F75E6D91D2AE5C0F72B78818744    SUCCESS!!   Loop = 37521
+
+loop4 started
+rk0[0] = e, rk1[0] = f
+rk0[1] = 5e, rk1[1] = 5f
+rk0[2] = 50, rk1[2] = 51
+rk0[3] = 0, rk1[3] = 1
+rk0[4] = d4, rk1[4] = d5
+rk0[5] = 60, rk1[5] = 61
+rk0[6] = 8c, rk1[6] = 8d
+rk0[7] = be, rk1[7] = bf
+rk0[8] = 7a, rk1[8] = 7b
+rk0[9] = 4, rk1[9] = 5
+rk0[10] = 14, rk1[10] = 15
+rk0[11] = 6, rk1[11] = 7
+rk0[12] = 3a, rk1[12] = 3b
+rk0[13] = 32, rk1[13] = 33
+rk0[14] = 82, rk1[14] = 83
+rk0[15] = 1e, rk1[15] = 1f  RK: 0E5F5000D4618DBE7B0515073B33821F    SUCCESS!!   Loop = 16541
+
+loop4 started
+rk0[0] = 18, rk1[0] = 19
+rk0[1] = 70, rk1[1] = 71
+rk0[2] = 92, rk1[2] = 93
+rk0[3] = da, rk1[3] = db
+rk0[4] = 64, rk1[4] = 65
+rk0[5] = 54, rk1[5] = 55
+rk0[6] = ce, rk1[6] = cf
+rk0[7] = b0, rk1[7] = b1
+rk0[8] = 84, rk1[8] = 85
+rk0[9] = 3e, rk1[9] = 3f
+rk0[10] = 68, rk1[10] = 69
+rk0[11] = 14, rk1[11] = 15
+rk0[12] = f8, rk1[12] = f9
+rk0[13] = 46, rk1[13] = 47
+rk0[14] = 6a, rk1[14] = 6b
+rk0[15] = 4, rk1[15] = 5  RK: 187092DA6454CEB1853E6915F8466A04    SUCCESS!!   Loop = 62079
+
+loop4 started
+rk0[0] = 96, rk1[0] = 97
+rk0[1] = 72, rk1[1] = 73
+rk0[2] = e, rk1[2] = f
+rk0[3] = d8, rk1[3] = d9
+rk0[4] = 16, rk1[4] = 17
+rk0[5] = 2e, rk1[5] = 2f
+rk0[6] = 66, rk1[6] = 67
+rk0[7] = 68, rk1[7] = 69
+rk0[8] = d4, rk1[8] = d5
+rk0[9] = f6, rk1[9] = f7
+rk0[10] = 4a, rk1[10] = 4b
+rk0[11] = 4a, rk1[11] = 4b
+rk0[12] = d0, rk1[12] = d1
+rk0[13] = 56, rk1[13] = 57
+rk0[14] = 68, rk1[14] = 69
+rk0[15] = 76, rk1[15] = 77  RK: 96730ED9162F6768D4F74A4AD0576876    SUCCESS!!   Loop = 56725

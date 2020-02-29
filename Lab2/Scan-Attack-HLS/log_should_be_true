@@ -1,0 +1,21 @@
+
+Testing AES128
+
+
+loop4 started
+rk0[0] = 28, rk1[0] = 29
+rk0[1] = 22, rk1[1] = 23
+rk0[2] = be, rk1[2] = bf
+rk0[3] = 84, rk1[3] = 85
+rk0[4] = e0, rk1[4] = e1
+rk0[5] = 6c, rk1[5] = 6d
+rk0[6] = d6, rk1[6] = d7
+rk0[7] = ae, rk1[7] = af
+rk0[8] = 52, rk1[8] = 53
+rk0[9] = 90, rk1[9] = 91
+rk0[10] = 48, rk1[10] = 49
+rk0[11] = f0, rk1[11] = f1
+rk0[12] = f0, rk1[12] = f1
+rk0[13] = ba, rk1[13] = bb
+rk0[14] = e8, rk1[14] = e9
+rk0[15] = ea, rk1[15] = eb  RK: 2923BE84E16CD6AE529049F1F1BBE9EB    SUCCESS!!   Loop = 1004
